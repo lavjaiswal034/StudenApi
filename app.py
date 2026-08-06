@@ -18,6 +18,12 @@ Swagger(app)
 app.register_blueprint(auth)
 app.register_blueprint(student)
 
+print("\n========== REGISTERED ROUTES ==========")
+
+for rule in app.url_map.iter_rules():
+    print(rule)
+
+print("=======================================\n")
 @app.route("/")
 def home():
     return {"message": "Student API is Live 🚀"}
