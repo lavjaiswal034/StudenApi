@@ -21,6 +21,12 @@ jwt.init_app(app)
 # Register blueprints
 app.register_blueprint(auth)
 
+@app.route("/")
+def home():
+    return {
+        "message": "Student API is Live 🚀"
+    }
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
